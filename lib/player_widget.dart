@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +29,7 @@ class PlayerWidget extends StatefulWidget {
 class _PlayerWidgetState extends State<PlayerWidget> {
   PlayingSong playingSong;
   PlayerMode mode;
+  int playMode = 1;
 
   AudioPlayer _audioPlayer;
   AudioPlayerState _audioPlayerState;
@@ -97,29 +97,44 @@ class _PlayerWidgetState extends State<PlayerWidget> {
             IconButton(
               key: Key('play_button'),
               onPressed: _isPlaying ? null : () => _play(),
-              iconSize: 64.0,
+              iconSize: 48.0,
               icon: Icon(Icons.play_arrow),
               color: Colors.cyan,
             ),
             IconButton(
               key: Key('pause_button'),
               onPressed: _isPlaying ? () => _pause() : null,
-              iconSize: 64.0,
+              iconSize: 48.0,
               icon: Icon(Icons.pause),
               color: Colors.cyan,
             ),
             IconButton(
               key: Key('prev_button'),
               onPressed: () => _prev(),
-              iconSize: 64.0,
+              iconSize: 48.0,
               icon: Icon(Icons.skip_previous),
               color: Colors.cyan,
             ),
             IconButton(
               key: Key('next_button'),
               onPressed: () => _next(),
-              iconSize: 64.0,
+              iconSize: 48.0,
               icon: Icon(Icons.skip_next),
+              color: Colors.cyan,
+            ),
+            IconButton(
+              key: Key('play_mode'),
+              onPressed: () {
+                setState(() {
+                  if (playMode == 1 || playMode == 2) {
+                    playMode++;
+                  } else {
+                    playMode = 1;
+                  }
+                });
+              },
+              iconSize: 26.0,
+              icon: playModeIcon(playMode),
               color: Colors.cyan,
             ),
           ],
@@ -195,6 +210,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
     _playerCompleteSubscription =
         _audioPlayer.onPlayerCompletion.listen((event) {
       _onComplete();
+      _next();
       setState(() {
         _position = _duration;
       });
@@ -277,6 +293,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
 
   Future<int> _next() async {
     var playlist = Provider.of<PlayList>(context, listen: false).value;
+    if (playMode == 3) {}
     int index = checkSameSong(playlist, playingSong);
     if (index == -1) {
       if (playlist.length == 0) {
@@ -361,4 +378,15 @@ int checkSameSong(List list, PlayingSong playingSong) {
     }
   }
   return -1;
+}
+
+Icon playModeIcon(int playMode) {
+  if (playMode == 1) {
+    // 顺序
+    return Icon(IconData(0xe6cf, fontFamily: 'iconfont'));
+  } else if (playMode == 2) {
+    //单曲
+    return Icon(IconData(0xe698, fontFamily: 'iconfont'));
+  } // 随机
+  return Icon(IconData(0xe7ff, fontFamily: 'iconfont'));
 }
