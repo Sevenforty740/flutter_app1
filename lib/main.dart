@@ -19,7 +19,7 @@ Song song1 = new Song(
     songId: '1',
     songName: "We Don't Talk Anymore",
     songUrl:
-        "https://s320.xiami.net/258/23258/2102673536/1795425255_1482921827440.mp3?ccode=xiami_web_web&expire=86400&duration=218&psid=673927da76a79c9552bc0b0ee93e25d7&ups_client_netip=2408:8207:30dd:7130:c560:5e90:f28d:828b&ups_ts=1602682128&ups_userid=0&utid=S0HuFhM+nwUCAd3crf05pX+o&vid=1795425255&fn=1795425255_1482921827440.mp3&vkey=Bd5e72f66f0ed5bcc2a482580ac7e6eec",
+        "https://s320.xiami.net/258/23258/2102673536/1795425255_1482921827440.mp3?ccode=xiami_web_web&expire=86400&duration=218&psid=e46c3ff612e74411e0a792a446ce9470&ups_client_netip=218.249.201.130&ups_ts=1602814811&ups_userid=0&utid=0cxpF6nDWRsCAdr5yYKfFVQD&vid=1795425255&fn=1795425255_1482921827440.mp3&vkey=B3354e4ab339352c8791a85aa94693f8f",
     album: "Your Songs 2017",
     duration: "03:39",
     artist: "Selena Gomez",
@@ -29,7 +29,7 @@ Song song2 = new Song(
     songId: '2',
     songName: "Tuscany",
     songUrl:
-        "https://s128.xiami.net/267/2111840267/5020760237/2100857155_1590687184422_2103.mp3?ccode=xiami_web_web&expire=86400&duration=205&psid=03f1b2ab3dcc891962b1514b205e29da&ups_client_netip=2408:8207:30dd:7130:c560:5e90:f28d:828b&ups_ts=1602682215&ups_userid=0&utid=S0HuFhM+nwUCAd3crf05pX+o&vid=2100857155&fn=2100857155_1590687184422_2103.mp3&vkey=B2d141b23878e20de6b20a9e692520ed9",
+        "https://s128.xiami.net/267/2111840267/5020760237/2100857155_1590687184422_2103.mp3?ccode=xiami_web_web&expire=86400&duration=205&psid=f9662c6345b29cd9b6147b97e895f5b1&ups_client_netip=218.249.201.130&ups_ts=1602814847&ups_userid=0&utid=0cxpF6nDWRsCAdr5yYKfFVQD&vid=2100857155&fn=2100857155_1590687184422_2103.mp3&vkey=B9ef76ed3555c5c4a6552cfaaaeecc6be",
     album: "Tuscany",
     duration: "03:25",
     artist: "Anja Kotar",
@@ -37,22 +37,22 @@ Song song2 = new Song(
 
 Song song3 = new Song(
     songId: '3',
-    songName: "New York City",
+    songName: "Creep",
     songUrl:
-        "https://s320.xiami.net/644/2110194644/5021383811/2104473798_1598873681261_516.mp3?ccode=xiami_web_web&expire=86400&duration=197&psid=05f48f7eda1d6fa07d9c98b8fb28846c&ups_client_netip=2408:8207:30dd:7130:c560:5e90:f28d:828b&ups_ts=1602682260&ups_userid=0&utid=S0HuFhM+nwUCAd3crf05pX+o&vid=2104473798&fn=2104473798_1598873681261_516.mp3&vkey=Be83f4741e2070be39baad5f7217c7163",
-    album: "Losing Your Love",
-    duration: "03:17",
-    artist: "Micky Skeel",
+        "https://s128.xiami.net/454/10454/169475/2092776_2026402_l.mp3?ccode=xiami_web_web&expire=86400&duration=237&psid=f82104e0b54dbfc43407e93637279bca&ups_client_netip=218.249.201.130&ups_ts=1602814907&ups_userid=0&utid=0cxpF6nDWRsCAdr5yYKfFVQD&vid=2092776&fn=2092776_2026402_l.mp3&vkey=Bb818a124ef61995f20c69c04da7ad8f0",
+    album: "The Best of Radiohead",
+    duration: "03:57",
+    artist: "RadioHead",
     source: "xiami");
 
 Song song4 = new Song(
     songId: '4',
-    songName: "Falling",
+    songName: "Do You?",
     songUrl:
-        "https://s320.xiami.net/180/2110620180/2104831524/1811396663_1556641873692_9470.mp3?ccode=xiami_web_web&expire=86400&duration=193&psid=037ac0866113f0537a592a12cec8d03c&ups_client_netip=2408:8207:30dd:7130:c560:5e90:f28d:828b&ups_ts=1602682300&ups_userid=0&utid=S0HuFhM+nwUCAd3crf05pX+o&vid=1811396663&fn=1811396663_1556641873692_9470.mp3&vkey=B5f41fa272942cc4a83c56f6955ae9bc5",
-    album: "Lovestruck",
-    duration: "03:13",
-    artist: "大笑",
+        "https://s320.xiami.net/177/1787589177/126831533/1774082918_16421925_h.mp3?ccode=xiami_web_web&expire=86400&duration=202&psid=05fd74520dbb22ff2615d85ef27acb13&ups_client_netip=218.249.201.130&ups_ts=1602815074&ups_userid=0&utid=0cxpF6nDWRsCAdr5yYKfFVQD&vid=1774082918&fn=1774082918_16421925_h.mp3&vkey=Be43f64aeafa2a4336f295c3ca9095866",
+    album: "Do You?",
+    duration: "03:22",
+    artist: "TroyBoi",
     source: "xiami");
 
 void main() {
@@ -62,7 +62,7 @@ void main() {
           songId: '999',
           songName: "他的方式(Demo)",
           songUrl:
-              "https://s320.xiami.net/248/1472992248/0/1776354248_0_h.mp3?ccode=xiami_web_web&expire=86400&duration=269&psid=8c940927e16f9f3fe66a2e9366bc0ff9&ups_client_netip=2408:8207:30dd:7130:c560:5e90:f28d:828b&ups_ts=1602682072&ups_userid=0&utid=S0HuFhM+nwUCAd3crf05pX+o&vid=1776354248&fn=1776354248_0_h.mp3&vkey=Ba1f1134c0985822ccd46a8fd05929065",
+              "https://s320.xiami.net/248/1472992248/0/1776354248_0_h.mp3?ccode=xiami_web_web&expire=86400&duration=269&psid=cb967034b4ece6cc5a05117f5f62ae7e&ups_client_netip=218.249.201.130&ups_ts=1602814715&ups_userid=0&utid=0cxpF6nDWRsCAdr5yYKfFVQD&vid=1776354248&fn=1776354248_0_h.mp3&vkey=B638182d8d919234d80bd85dfd364993d",
           album: "他的方式",
           duration: "04:29",
           artist: "大波浪",
@@ -183,7 +183,7 @@ class _PlaylistWidgetState extends State<PlaylistWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: widget.playlist.value.map<Widget>((song) {
+        children: widget.playlist.list.map<Widget>((song) {
       return SizedBox(
           width: 400,
           child: FlatButton(

@@ -210,10 +210,16 @@ class _PlayerWidgetState extends State<PlayerWidget> {
     _playerCompleteSubscription =
         _audioPlayer.onPlayerCompletion.listen((event) {
       _onComplete();
-      _next();
-      setState(() {
-        _position = _duration;
-      });
+      if (playMode == 2) {
+        _playerState = PlayerState.stopped;
+        _position = Duration();
+        _play();
+      } else {
+        _next(); // 播放完成后 播下一首
+        setState(() {
+          _position = _duration;
+        });
+      }
     });
 
     _playerErrorSubscription = _audioPlayer.onPlayerError.listen((msg) {
@@ -245,6 +251,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
     _playingRouteState = PlayingRouteState.speakers;
   }
 
+  // Kmusic使用 需要在play中通过id source 获取播放url
   Future<int> _play() async {
     final playPosition = (_position != null &&
             _duration != null &&
@@ -292,11 +299,19 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   }
 
   Future<int> _next() async {
-    var playlist = Provider.of<PlayList>(context, listen: false).value;
-    if (playMode == 3) {}
+    var playlist;
+    if (playMode == 3) {
+      playlist = Provider.of<PlayList>(context, listen: false).shuffle;
+      for (var i = 0; i < playlist.length; i++) {
+        print(playlist[i].songName);
+      }
+    } else {
+      playlist = Provider.of<PlayList>(context, listen: false).list;
+    }
+
     int index = checkSameSong(playlist, playingSong);
     if (index == -1) {
-      if (playlist.length == 0) {
+      if (playlist.isEmpty) {
         return -1;
       } else {
         Provider.of<PlayingSong>(context, listen: false).update(
@@ -327,10 +342,15 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   }
 
   Future<int> _prev() async {
-    var playlist = Provider.of<PlayList>(context, listen: false).value;
+    var playlist;
+    if (playMode == 3) {
+      playlist = Provider.of<PlayList>(context, listen: false).shuffle;
+    } else {
+      playlist = Provider.of<PlayList>(context, listen: false).list;
+    }
     int index = checkSameSong(playlist, playingSong);
     if (index == -1) {
-      if (playlist.length == 0) {
+      if (playlist.isEmpty) {
         return -1;
       } else {
         Provider.of<PlayingSong>(context, listen: false).update(
